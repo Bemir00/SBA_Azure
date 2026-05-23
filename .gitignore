@@ -1,0 +1,19 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Environments
+.venv/
+env/
+venv/
+antenv/
+
+# Azure Functions local
+api/.venv/
+api/local.settings.json
+api/__azurite_db*__.json
+api/__blobstorage__/
+api/__queuestorage__/
+
+# VS Code
+.vscode/
