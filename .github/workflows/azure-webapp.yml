@@ -1,0 +1,21 @@
+name: Build and deploy Python app to Azure Web App - geometry-bemir-sba1
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'geometry-bemir-sba1'
+          slot-name: 'production'
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_31ef5c4b156b414da73f4caa75fa1b53 }}
+          package: .
